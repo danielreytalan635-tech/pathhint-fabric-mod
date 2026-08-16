@@ -1,6 +1,5 @@
 package com.pathhintclone.render;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.pathhintclone.PathHintState;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext;
 import net.minecraft.client.render.RenderLayer;
@@ -8,7 +7,6 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import org.joml.Matrix4f;
 
@@ -36,9 +34,6 @@ public final class PathRenderer {
 		if (matrices == null) return;
 
 		Vec3d cam = context.camera().getPos();
-
-		RenderSystem.disableDepthTest();
-		RenderSystem.depthMask(false);
 
 		matrices.push();
 		matrices.translate(-cam.x, -cam.y, -cam.z);
@@ -79,9 +74,6 @@ public final class PathRenderer {
 
 		consumers.draw();
 		matrices.pop();
-
-		RenderSystem.depthMask(true);
-		RenderSystem.enableDepthTest();
 	}
 
 	private static void addLineVertex(VertexConsumer buffer, Matrix4f matrix, double x, double y, double z,
