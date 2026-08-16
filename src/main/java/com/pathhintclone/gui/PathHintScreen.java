@@ -69,7 +69,7 @@ public class PathHintScreen extends Screen {
 		int row = 0;
 		for (Waypoint wp : waypoints) {
 			int y = listTop + row * 22;
-			if (y > this.height - 40) break; // don't overflow the screen; add scrolling if you need more
+			if (y > this.height - 40) break; // don't overflow the screen
 			addDrawableChild(ButtonWidget.builder(Text.literal(wp.name), b -> goToWaypoint(wp))
 					.dimensions(centerX - PANEL_WIDTH / 2, y, PANEL_WIDTH - 60, 20).build());
 			addDrawableChild(ButtonWidget.builder(Text.literal("X"), b -> deleteWaypoint(wp))
@@ -122,7 +122,7 @@ public class PathHintScreen extends Screen {
 		if (this.client == null || this.client.player == null || this.client.world == null) return;
 		BlockPos playerPos = this.client.player.getBlockPos();
 		BlockPos surface = playerPos;
-		for (int y = playerPos.getY(); y <= this.client.world.getTopY(); y++) {
+		for (int y = playerPos.getY(); y <= this.client.world.getTopYInclusive(); y++) {
 			BlockPos check = new BlockPos(playerPos.getX(), y, playerPos.getZ());
 			if (this.client.world.isSkyVisible(check)) {
 				surface = check;
