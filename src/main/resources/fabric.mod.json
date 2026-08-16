@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "pathhintclone",
+	"version": "${version}",
+	"name": "PathHint Clone",
+	"description": "Computes and visualizes A*-based smart navigation paths in-world, with break/place block hints, waypoints, death markers, and breadcrumb trails.",
+	"authors": [
+		"You"
+	],
+	"contact": {
+		"homepage": "https://example.com"
+	},
+	"license": "MIT",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.pathhintclone.PathHintClient"
+		]
+	},
+	"mixins": [],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
