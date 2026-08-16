@@ -5,9 +5,11 @@ coordinates/waypoints, a glowing through-walls path line, break/place
 block hints, death markers, breadcrumb trail, and a cave-escape button.
 Press **H** in-game to open the menu.
 
-This is source code only — I couldn't compile a `.jar` in the sandbox I
-was writing this in (it has no network access to Mojang's/Fabric's
-Maven/library servers), so you'll build it locally. It takes one command.
+> **Disclaimer & Credits**  
+> This is an unofficial, community-maintained build/clone inspired by **PathHint**.
+> * **Original Concept:** Inspired by **PathHint**.
+> * **Licensing Note:** All code in this repository has been updated and recompiled to support modern Fabric API standards on Minecraft 1.21.5. This project is provided completely free of charge.
+> * **Notice to Original Author:** If you are the original creator and have any concerns regarding this repository, please open an issue or contact me.
 
 ## Requirements
 
@@ -20,17 +22,12 @@ Maven/library servers), so you'll build it locally. It takes one command.
 ```bash
 cd pathhint-clone
 
-# If you don't already have a Gradle wrapper (gradlew/gradlew.bat) —
-# most IDEs (IntelliJ) generate one automatically on import. If you're
-# on the command line and have Gradle installed, generate it once:
-gradle wrapper --gradle-version 8.12
-
-# Then build:
+# Build using the Gradle wrapper:
 ./gradlew build        # macOS/Linux
 gradlew.bat build       # Windows
-```
 
-The finished mod jar will be at:
+
+The finished mod jar will be at: Releases or Actions Tab
 
 ```
 build/libs/pathhint-clone-1.0.0.jar
